@@ -1,0 +1,3 @@
+swiftbarmenu
+requests
+setuptools
