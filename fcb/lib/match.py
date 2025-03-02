@@ -33,12 +33,13 @@ class Match:
 
     @property
     def until_match_display(self) -> str:
-        delta = self.until_match
-        days = delta.days
-        hours = delta.seconds // 3600
-        if days < 1:
+        if self.match_today:
+            delta = self.datetime - datetime.datetime.now()
+            hours = delta.seconds // 3600
             return f'{hours}h'
         else:
+            delta = self.datetime.date() - datetime.date.today()
+            days = delta.days
             return f'{days}d'
 
     @property
