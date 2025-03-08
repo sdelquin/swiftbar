@@ -12,9 +12,8 @@ class Menu:
         self.build()
 
     def build(self):
-        while (match := self.calendar[0]).already_played:
+        while (first_match := self.calendar[0]).already_played:
             self.calendar.pop(0)
-        first_match = self.calendar[0]
         title_suffix = (
             ':soccerball:' if first_match.match_today else f'({first_match.until_match_display})'
         )
