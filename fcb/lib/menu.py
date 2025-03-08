@@ -16,16 +16,15 @@ class Menu:
             ':soccerball:' if first_match.match_today else f'({first_match.until_match_display})'
         )
         self.menu.header[0].text += f' {title_suffix}'
-        self.menu.add_item(first_match.teams_display, color='orange')
-        self.menu.add_item(first_match.datetime_display, color='orange')
-        self.menu.add_item(first_match.competition)
-        self.menu.add_item(first_match.tv_operator_display)
+        color = settings.TODAY_MATCH_COLOR if first_match.match_today else settings.NEXT_MATCH_COLOR
+        self.menu.add_item(first_match.teams_display, color=color)
+        self.menu.add_item(first_match.datetime_display, color=color)
+        self.menu.add_item(first_match.competition, color=color)
         self.menu.add_sep()
         for match in self.calendar[1:]:
             item = self.menu.add_item(match.teams_display)
             item.add_item(match.datetime_display)
             item.add_item(match.competition)
-            item.add_item(match.tv_operator_display)
 
     def dump(self):
         self.menu.dump()

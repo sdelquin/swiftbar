@@ -10,3 +10,6 @@ MATCHES_SELECTOR = config(
 )
 
 MENU_TITLE = config('MENU_TITLE', default='FCB')
+
+TODAY_MATCH_COLOR = config('TODAY_MATCH_COLOR', default='green')
+NEXT_MATCH_COLOR = config('NEXT_MATCH_COLOR', default='orange')
