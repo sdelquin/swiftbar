@@ -58,7 +58,12 @@ class Match:
 
     @property
     def match_today(self) -> bool:
-        return self.datetime.date() == datetime.date.today()
+        now = datetime.datetime.now()
+        return self.datetime.date() == now.date() and self.datetime.time() > now.time()
+
+    @property
+    def already_played(self) -> bool:
+        return self.datetime < datetime.datetime.now()
 
     @property
     def teams_display(self):

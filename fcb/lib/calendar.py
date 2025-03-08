@@ -2,7 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 
 import settings
-from lib.match import Match
+
+from .match import Match
 
 
 class Calendar:
@@ -29,3 +30,6 @@ class Calendar:
 
     def __slice__(self, start, stop):
         return self.matches[start:stop]
+
+    def pop(self, index):
+        return self.matches.pop(index)

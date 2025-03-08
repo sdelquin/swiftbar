@@ -15,7 +15,7 @@ def parse_datetime(date: str, time: str, to_atlantic_canary: bool = True) -> dat
 
 
 def parse_teams(match: str, to_upper: bool = True) -> list[str]:
-    teams = re.split(r' *VS *', match, flags=re.I)
+    teams = re.split(r' *(?:VS|APLZ) *', match, flags=re.I)
     if to_upper:
         teams = [team.upper() for team in teams]
     return teams
