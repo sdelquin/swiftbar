@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-cd $(dirname "$0")/../netatmo/
+cd $(dirname "$0")/../fcb
 source .venv/bin/activate
 python main.py
